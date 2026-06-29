@@ -26,12 +26,12 @@ function peep() {
     const time = Math.round(Math.random() * (1200 - 600) + 600);
     const hole = randomHole(holes);
 
-    hole.textContent = '🐹'; // Сажаем хомяка в норку
+    hole.textContent = '🐇'; // Сажаем хомяка в норку
     hole.classList.add('has-mole'); // Помечаем, что тут есть хомяка
 
     // Через заданное время прячем хомяка
     moleTimer = setTimeout(() => {
-        if (hole.textContent === '🐹') {
+        if (hole.textContent === '🐇') {
             hole.textContent = ''; // Прячем хомяка, если его не поймали
         }
         hole.classList.remove('has-mole');
@@ -78,12 +78,12 @@ function whack(e) {
     if (this.classList.contains('has-mole')) {
         score++; // Увеличиваем счет
         scoreBoard.textContent = score; // Обновляем счет на экране
-        this.textContent = '💥'; // Показываем анимацию удара
+        this.textContent = '👑'; // Показываем анимацию удара
         this.classList.remove('has-mole'); // хомяка больше нет в этой норке
 
         // Через 200 миллисекунд убираем взрыв из норки
         setTimeout(() => {
-            if (this.textContent === '💥') {
+            if (this.textContent === '👑') {
                 this.textContent = '';
             }
         }, 200);
